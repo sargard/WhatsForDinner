@@ -20,6 +20,7 @@ public class CreateRecipePage extends AppCompatActivity {
         setContentView(R.layout.activity_create_recipe_page);
     }
 
+
     public void onSubmitClick(View view) {
         //-------------- get recipe name ---------------------------------
         EditText mEdit   = (EditText)findViewById(R.id.recipeName);
@@ -43,9 +44,13 @@ public class CreateRecipePage extends AppCompatActivity {
             finish();
         }
         else {
-            Recipe r = new Recipe(rName, rInstructions, rCategory, rServing);
+            Recipe r = new Recipe(rName, rInstructions, rCategory, rServing, AddIngredientPage.IngredientList);
             //add recipe to arraylist thing
             Recipe.Recipes.add(r);
+        }
+
+        for(int i = 0; i < AddIngredientPage.IngredientList.size(); i++){
+            AddIngredientPage.IngredientList.remove(i);
         }
 
         String msg = "Recipe Added";
