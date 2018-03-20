@@ -46,17 +46,18 @@ public class CreateRecipePage extends AppCompatActivity {
 
         //--------------- recipe object created ----------------------------
         if(rName.trim().length() == 0 || ser.trim().length() == 0 || rInstructions.trim().length() == 0 || rCategory.trim().length() == 0){
+            finish();
+
+        }
+        else {
             Recipe r = new Recipe(rName, rInstructions, rCategory,
                     rServing, AddIngredientPage.IngredientList);
             //add recipe to arraylist thing
             RecipeList.add(r);
 
         }
-        else {
-            finish();
-        }
 
-        //AddIngredientPage.IngredientList.clear();
+        AddIngredientPage.IngredientList.clear();
 
         String msg = "Recipe Added";
         Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
