@@ -46,12 +46,10 @@ public class CreateRecipePage extends AppCompatActivity {
         else {
             Recipe r = new Recipe(rName, rInstructions, rCategory, rServing, AddIngredientPage.IngredientList);
             //add recipe to arraylist thing
-            Recipe.Recipes.add(r);
+            //Recipes.add(r);
         }
 
-        for(int i = 0; i < AddIngredientPage.IngredientList.size(); i++){
-            AddIngredientPage.IngredientList.remove(i);
-        }
+        AddIngredientPage.IngredientList.clear();
 
         String msg = "Recipe Added";
         Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
