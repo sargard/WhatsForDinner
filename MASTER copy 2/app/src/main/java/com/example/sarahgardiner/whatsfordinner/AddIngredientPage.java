@@ -14,6 +14,8 @@ public class AddIngredientPage extends AppCompatActivity {
     }
 
     public void addIngredientPageButton(View view) {
+        //kinda copy what was done in the create recipe page
+
         String msg = "Ingredient Added";
         Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
         toast.show();

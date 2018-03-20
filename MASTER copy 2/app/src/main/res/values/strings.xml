@@ -20,6 +20,7 @@
     <string name="how_much">How much?</string>
     <string name="add_ingredient">Add Ingredient</string>
     <string name="search">Search</string>
+    <string name="what_s_for_dinner">What\'s for Dinner?</string>
     <string-array name="category_array">
         <item>Breakfast</item>
         <item>Lunch</item>

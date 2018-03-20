@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class CreateRecipePage extends AppCompatActivity {
 
-    //public ArrayList<Recipe> Recipes;
+    public static ArrayList<Recipe> Recipes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class CreateRecipePage extends AppCompatActivity {
         String ser = mEdit2.getText().toString();
         int rServing = Integer.parseInt(ser);
 
-        //-------------- get recipe instuctions ----------------------------
+        //-------------- get recipe instructions ----------------------------
         EditText mEdit3   = (EditText)findViewById(R.id.recipeInstuctions);
         String rInstructions = mEdit3.getText().toString();
 
@@ -39,10 +39,14 @@ public class CreateRecipePage extends AppCompatActivity {
         String rCategory = cat.getSelectedItem().toString();
 
         //--------------- recipe object created ----------------------------
-        Recipe r = new Recipe(rName, rInstructions, rCategory, rServing);
-
-        //add recipe to arraylist thing
-        //Recipes.add(r);
+        if(rName.trim().length() == 0 || ser.trim().length() == 0 || rInstructions.trim().length() == 0 || rCategory.trim().length() == 0){
+            finish();
+        }
+        else {
+            Recipe r = new Recipe(rName, rInstructions, rCategory, rServing);
+            //add recipe to arraylist thing
+            Recipe.Recipes.add(r);
+        }
 
         String msg = "Recipe Added";
         Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);

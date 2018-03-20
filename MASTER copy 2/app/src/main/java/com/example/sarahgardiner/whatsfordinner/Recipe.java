@@ -1,10 +1,15 @@
 package com.example.sarahgardiner.whatsfordinner;
 
+import java.util.ArrayList;
+
 /**
  * Created by sarahgardiner on 3/11/18.
  */
 
 public class Recipe {
+
+    public static ArrayList<Recipe> Recipes;
+
     private String name;
     private String instructions;
     private String category;
