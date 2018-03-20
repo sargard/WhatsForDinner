@@ -25,7 +25,8 @@
         <activity android:name=".CreateRecipePage" />
         <activity android:name=".AddIngredientPage" />
         <activity android:name=".UserMenu" />
-        <activity android:name=".Ingredient"></activity>
+        <activity android:name=".Ingredient" />
+        <activity android:name=".ViewRecipePage"></activity>
     </application>
 
 </manifest>

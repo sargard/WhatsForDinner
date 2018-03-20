@@ -1,5 +1,6 @@
 package com.example.sarahgardiner.whatsfordinner;
 
+import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,9 +26,13 @@ public class BrowseRecipesPage extends AppCompatActivity {
             btn[i].setText(n);
             btn[i].setTextSize(20);
             btn[i].setGravity(Gravity.CENTER);
-            //btn[i].setOnClickListener((View.OnClickListener) this);
-            linearLayout.addView(btn[i]);
-
+            btn[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(BrowseRecipesPage.this, ViewRecipePage.class));
+                }
+            });
+                    linearLayout.addView(btn[i]);
         }
 
         this.setContentView(linearLayout, new LinearLayout.LayoutParams(
@@ -35,7 +40,4 @@ public class BrowseRecipesPage extends AppCompatActivity {
 
     }
 
-    //public void onClick(View view) {
-
-    //}
 }
