@@ -1,56 +1,18 @@
 package com.example.sarahgardiner.whatsfordinner;
 
-import java.util.ArrayList;
-
 /**
  * Created by sarahgardiner on 3/11/18.
  */
 
 public class Ingredient {
-
     private String name;
     private String type;
-    private String measurement;
-    private double amount;
+    private int amount;
 
-    public Ingredient(String n, String t, String m, String a, int b){
+    public Ingredient(String n, String t, int a){
         name = n;
         type = t;
-        measurement = m;
-        double temp = 0;
-        if(a.equals("0")){
-            temp = 0;
-        }
-        else if(a.equals("1/4")){
-            temp = .24;
-        }
-        else if(a.equals("1/16")){
-            temp = .0625;
-        }
-        else if(a.equals("1/8")){
-            temp = .125;
-        }
-        else if(a.equals("1/3")){
-            temp = .333;
-        }
-        else if(a.equals("1/2")){
-            temp = .5;
-        }
-        else if(a.equals("2/3")){
-            temp = .666;
-        }
-        else {
-            temp = .75;
-        }
-
-        amount = temp + b;
-    }
-
-    public Ingredient(){
-        name = null;
-        type = null;
-        amount = 0;
-        measurement = null;
+        amount = a;
     }
 
     public String getName(){
@@ -61,11 +23,9 @@ public class Ingredient {
         return this.type;
     }
 
-    public double getAmount(){
+    public int getAmount(){
         return this.amount;
     }
-
-    public String getMeasurement(){ return this.measurement;}
 
     public void setName(String n){
         name = n;
@@ -75,36 +35,7 @@ public class Ingredient {
         type = t;
     }
 
-    public void setAmount(String a, double b){
-        double temp = 0;
-        if(a.equals("0")){
-            temp = 0;
-        }
-        else if(a.equals("1/4")){
-            temp = .24;
-        }
-        else if(a.equals("1/16")){
-            temp = .0625;
-        }
-        else if(a.equals("1/8")){
-            temp = .125;
-        }
-        else if(a.equals("1/3")){
-            temp = .333;
-        }
-        else if(a.equals("1/2")){
-            temp = .5;
-        }
-        else if(a.equals("2/3")){
-            temp = .666;
-        }
-        else {
-            temp = .75;
-        }
-
-        amount = temp + b;
-
+    public void setAmount(int a){
+        amount = a;
     }
-
-    public void setMeasurement(String a){ measurement = a; }
 }
