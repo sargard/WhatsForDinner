@@ -22,6 +22,15 @@ public class Recipe {
         this.ingredients = i;
     }
 
+    public Recipe(){
+        name = null;
+        instructions = null;
+        category = null;
+        servings = 0;
+        ingredients = null;
+    }
+
+
     public String getName(){
         return this.name;
     }
