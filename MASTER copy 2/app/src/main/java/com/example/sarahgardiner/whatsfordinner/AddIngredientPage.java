@@ -12,7 +12,11 @@ import java.util.ArrayList;
 
 public class AddIngredientPage extends AppCompatActivity {
 
+<<<<<<< HEAD
     public static ArrayList<Ingredient> IngredientList;
+=======
+    public static ArrayList<Ingredient> IngredientList = new ArrayList<Ingredient>();
+>>>>>>> c144b7b144cee96ce15dad3cc6bc1731054c8d63
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +25,10 @@ public class AddIngredientPage extends AppCompatActivity {
     }
 
     public void addIngredientPageButton(View view) {
+<<<<<<< HEAD
         //kinda copy what was done in the create recipe page
+=======
+>>>>>>> c144b7b144cee96ce15dad3cc6bc1731054c8d63
         EditText mEdit   = findViewById(R.id.iName);
         String IngredientName = mEdit.getText().toString();
         Log.d("myTag", "IngredientName: "+ IngredientName);
@@ -49,6 +56,7 @@ public class AddIngredientPage extends AppCompatActivity {
         //I.setAmount(IngredientFractions, D);
         //I.setName(IngredientName);
         //I.setType(IngredientType);
+<<<<<<< HEAD
        // I.setMeasurement(IngredientMeasurement);
 
         //IngredientList.add(I);
@@ -56,6 +64,16 @@ public class AddIngredientPage extends AppCompatActivity {
         String msg5 = "Ingredient Added";
         Toast toast5 = Toast.makeText(this, msg5, Toast.LENGTH_LONG);
         toast5.show();
+=======
+        // I.setMeasurement(IngredientMeasurement);
+
+        AddIngredientPage.IngredientList.add(I);
+
+
+        String msg = "Ingredient Added";
+        Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
+        toast.show();
+>>>>>>> c144b7b144cee96ce15dad3cc6bc1731054c8d63
         finish();
     }
 
