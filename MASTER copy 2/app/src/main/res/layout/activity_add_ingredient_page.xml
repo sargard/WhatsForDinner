@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Spinner
-        android:id="@+id/itype"
+        android:id="@+id/iMeasurement"
         android:layout_width="121dp"
         android:layout_height="37dp"
         android:layout_marginTop="95dp"
@@ -78,7 +78,7 @@
         android:layout_marginTop="43dp"
         android:entries="@array/fractions_array"
         android:popupBackground="@android:color/darker_gray"
-        app:layout_constraintEnd_toStartOf="@+id/itype"
+        app:layout_constraintEnd_toStartOf="@+id/iMeasurement"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Spinner
@@ -104,7 +104,7 @@
         android:onClick="addIngredientPageButton"
         android:text="@string/add_ingredient"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/itype"
+        app:layout_constraintBottom_toTopOf="@+id/iMeasurement"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iType"
