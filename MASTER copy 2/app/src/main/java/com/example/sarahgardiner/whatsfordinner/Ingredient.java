@@ -56,6 +56,12 @@ public class Ingredient {
 
     public String getMeasurment() { return this.measurment; }
 
+    public String  getStringIngredient(){
+        String answer = "";
+        answer = amount + " "+ measurment +" "+ name;
+        return answer;
+    }
+
     public void setName(String n){
         name = n;
     }

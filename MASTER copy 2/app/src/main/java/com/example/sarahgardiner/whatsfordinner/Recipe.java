@@ -51,6 +51,16 @@ public class Recipe {
          return this.ingredients;
     }
 
+    public String getstrIngredients(){
+        String answer = "";
+        for (int i = 0; i < AddIngredientPage.IngredientList.size(); i++){
+            Ingredient temp = AddIngredientPage.IngredientList.get(i);
+            String a = temp.getStringIngredient();
+            answer = answer + a + " \n";
+        }
+        return answer;
+    }
+
     public void setName(String n){
         name = n;
     }
