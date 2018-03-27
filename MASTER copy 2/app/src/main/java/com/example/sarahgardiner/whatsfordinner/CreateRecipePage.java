@@ -13,7 +13,11 @@ import java.util.ArrayList;
 
 public class CreateRecipePage extends AppCompatActivity {
 
+<<<<<<< HEAD
+    public static ArrayList<Recipe> Recipes;
+=======
     public static ArrayList<Recipe> RecipeList = new ArrayList<Recipe>();
+>>>>>>> c144b7b144cee96ce15dad3cc6bc1731054c8d63
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,16 @@ public class CreateRecipePage extends AppCompatActivity {
         //--------------- recipe object created ----------------------------
         if(rName.trim().length() == 0 || ser.trim().length() == 0 || rInstructions.trim().length() == 0 || rCategory.trim().length() == 0){
             finish();
+<<<<<<< HEAD
+        }
+        else {
+            Recipe r = new Recipe(rName, rInstructions, rCategory, rServing, AddIngredientPage.IngredientList);
+            //add recipe to arraylist thing
+            //Recipes.add(r);
+        }
+
+        //AddIngredientPage.IngredientList.clear();
+=======
 
         }
         else {
@@ -58,6 +72,7 @@ public class CreateRecipePage extends AppCompatActivity {
         }
 
         AddIngredientPage.IngredientList.clear();
+>>>>>>> c144b7b144cee96ce15dad3cc6bc1731054c8d63
 
         String msg = "Recipe Added";
         Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
