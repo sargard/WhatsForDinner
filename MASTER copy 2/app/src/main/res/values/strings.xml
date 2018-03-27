@@ -14,13 +14,12 @@
     <string name="category_prompt">Choose a Category</string>
     <string name="name_of_recipe">Name of Recipe:</string>
     <string name="instructions">Instructions:</string>
+    <string name="servings">Servings:</string>
     <string name="add_recipe">Add Recipe</string>
     <string name="add_an_ingredient">Add an Ingredient:</string>
     <string name="how_much">How much?</string>
     <string name="add_ingredient">Add Ingredient</string>
     <string name="search">Search</string>
-    <string name="what_s_for_dinner">What\'s for Dinner?</string>
-    <string name="servings">Servings:</string>
     <string name="textview">TextView</string>
     <string-array name="category_array">
         <item>Breakfast</item>

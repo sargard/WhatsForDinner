@@ -12,7 +12,6 @@ public class SplashPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_page);
     }
-    
 
     public void onSplashPageClick(View view) {
         Intent intent = new Intent(this, loginpage.class);

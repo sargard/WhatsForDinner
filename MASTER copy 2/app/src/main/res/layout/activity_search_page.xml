@@ -26,7 +26,6 @@
         android:layout_marginTop="5dp"
         android:text="@string/search"
         android:textStyle="bold"
-        android:onClick="onSubmit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/spinner"
         app:layout_constraintTop_toTopOf="parent" />

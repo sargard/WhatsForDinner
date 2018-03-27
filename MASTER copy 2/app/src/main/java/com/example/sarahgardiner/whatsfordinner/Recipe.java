@@ -7,23 +7,19 @@ import java.util.ArrayList;
  */
 
 public class Recipe {
-
-
     private String name;
     private String instructions;
     private String category;
-    private ArrayList<Ingredient> ingredients;
+    private ArrayList ingredients;
     private int servings;
-    private String IList;
 
     public Recipe(String name, String instructions, String category,
-                  int servings, ArrayList<Ingredient> i, String a){
+                  int servings, ArrayList<Ingredient> i){
         this.name = name;
         this.instructions = instructions;
         this.category = category;
         this.servings = servings;
         this.ingredients = i;
-        this.IList = a;
     }
 
     public Recipe(){
@@ -32,7 +28,6 @@ public class Recipe {
         category = null;
         servings = 0;
         ingredients = null;
-        IList = null;
     }
 
 
@@ -53,7 +48,7 @@ public class Recipe {
     }
 
     public ArrayList getIngredients(){
-        return this.ingredients;
+         return this.ingredients;
     }
 
     public String getstrIngredients(){
@@ -63,7 +58,6 @@ public class Recipe {
             String a = temp.getStringIngredient();
             answer = answer + a + " \n";
         }
-        IList = answer;
         return answer;
     }
 
@@ -81,11 +75,6 @@ public class Recipe {
 
     public void setServings(int s){
         servings = s;
-    }
-
-    public void addIngredients(Ingredient i){
-
-
     }
 
     public void setIngredients(ArrayList<Ingredient> i){

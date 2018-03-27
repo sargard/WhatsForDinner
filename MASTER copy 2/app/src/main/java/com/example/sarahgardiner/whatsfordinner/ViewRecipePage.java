@@ -2,7 +2,6 @@ package com.example.sarahgardiner.whatsfordinner;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 
 public class ViewRecipePage extends AppCompatActivity {
@@ -30,8 +29,6 @@ public class ViewRecipePage extends AppCompatActivity {
 
         int ser = r.getServings();
         String instruct = r.getInstructions();
-        String Ingredients = r.getstrIngredients();
-        Log.d("myTag", "RecipeIngredients: "+ Ingredients);
 
         TextView textView7 = (TextView)findViewById(R.id.textView7);
         textView7.setText(rName);
