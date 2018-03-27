@@ -11,6 +11,7 @@ public class Recipe {
     private String instructions;
     private String category;
     private ArrayList ingredients;
+    private String IList;
     private int servings;
 
     public Recipe(String name, String instructions, String category,
@@ -58,6 +59,7 @@ public class Recipe {
             String a = temp.getStringIngredient();
             answer = answer + a + " \n";
         }
+        IList = answer;
         return answer;
     }
 
