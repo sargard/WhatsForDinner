@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 public class CreateRecipePage extends AppCompatActivity {
 
+    public static ArrayList<Recipe> Recipes;
     public static ArrayList<Recipe> RecipeList = new ArrayList<Recipe>();
 
     @Override
@@ -47,15 +48,14 @@ public class CreateRecipePage extends AppCompatActivity {
         //--------------- recipe object created ----------------------------
         if(rName.trim().length() == 0 || ser.trim().length() == 0 || rInstructions.trim().length() == 0 || rCategory.trim().length() == 0){
             finish();
-
         }
         else {
-            Recipe r = new Recipe(rName, rInstructions, rCategory,
-                    rServing, AddIngredientPage.IngredientList);
+            String a = null;
+            Recipe r = new Recipe(rName, rInstructions, rCategory, rServing, AddIngredientPage.IngredientList, a);
             //add recipe to arraylist thing
-            RecipeList.add(r);
-
+            //Recipes.add(r);
         }
+
 
         AddIngredientPage.IngredientList.clear();
 

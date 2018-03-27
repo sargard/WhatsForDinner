@@ -11,7 +11,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class AddIngredientPage extends AppCompatActivity {
-
     public static ArrayList<Ingredient> IngredientList = new ArrayList<Ingredient>();
 
     @Override
@@ -21,6 +20,7 @@ public class AddIngredientPage extends AppCompatActivity {
     }
 
     public void addIngredientPageButton(View view) {
+        //kinda copy what was done in the create recipe page
         EditText mEdit   = findViewById(R.id.iName);
         String IngredientName = mEdit.getText().toString();
         Log.d("myTag", "IngredientName: "+ IngredientName);
@@ -48,6 +48,13 @@ public class AddIngredientPage extends AppCompatActivity {
         //I.setAmount(IngredientFractions, D);
         //I.setName(IngredientName);
         //I.setType(IngredientType);
+       // I.setMeasurement(IngredientMeasurement);
+
+        //IngredientList.add(I);
+
+        String msg5 = "Ingredient Added";
+        Toast toast5 = Toast.makeText(this, msg5, Toast.LENGTH_LONG);
+        toast5.show();
         // I.setMeasurement(IngredientMeasurement);
 
         AddIngredientPage.IngredientList.add(I);
@@ -59,5 +66,5 @@ public class AddIngredientPage extends AppCompatActivity {
         finish();
     }
 
-    
+
 }
