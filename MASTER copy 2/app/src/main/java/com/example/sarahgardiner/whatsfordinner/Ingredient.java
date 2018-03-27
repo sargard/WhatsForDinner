@@ -94,6 +94,12 @@ public class Ingredient {
     public String getMeasurment() { return this.measurment; }
 >>>>>>> c144b7b144cee96ce15dad3cc6bc1731054c8d63
 
+    public String  getStringIngredient(){
+        String answer = "";
+        answer = amount + " "+ measurment +" "+ name;
+        return answer;
+    }
+
     public void setName(String n){
         name = n;
     }
