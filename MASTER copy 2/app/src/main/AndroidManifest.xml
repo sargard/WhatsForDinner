@@ -29,7 +29,8 @@
         <activity android:name=".UserMenu" />
         <activity android:name=".Ingredient" />
         <activity android:name=".ViewRecipePage" />
-        <activity android:name=".ViewRecipeWeekPage"></activity>
+        <activity android:name=".ViewRecipeWeekPage" />
+        <activity android:name=".SearchResultsPage"></activity>
     </application>
 
 </manifest>

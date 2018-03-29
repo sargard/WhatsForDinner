@@ -29,6 +29,7 @@
         <item>Lunch</item>
         <item>Dinner</item>
         <item>Dessert</item>
+        <item>InstantPot</item>
         <item>5 Minute Meal</item>
         <item>Vegan</item>
         <item>Vegetarian</item>
@@ -38,6 +39,8 @@
         <item>Tsp</item>
         <item>Tbsp</item>
         <item>Cup</item>
+        <item>Item</item>
+        <item>Slice</item>
     </string-array>
     <string-array name="fractions_array">
         <item>0</item>
@@ -49,8 +52,7 @@
         <item>2/3</item>
         <item>3/4</item>
     </string-array>
-    <string-array name="digit_array">
-        <item>0</item>
+    <string-array name="digit_array">y
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -73,7 +75,8 @@
         <item>Meat</item>
         <item>Frozen</item>
         <item>Bakery</item>
-        <item>Canned Goods</item>
+        <item>Canned and Dry Goods</item>
+        <item>Spices</item>
         <item>Pasta and Rice</item>
         <item>Oils and Sauces</item>
         <item>Snacks and Crackers</item>
