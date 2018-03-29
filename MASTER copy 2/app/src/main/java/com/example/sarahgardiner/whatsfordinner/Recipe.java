@@ -13,6 +13,7 @@ public class Recipe implements Serializable {
     private String category;
     private ArrayList ingredients;
     private int servings;
+    private String StrIngredients;
 
     public Recipe(String name, String instructions, String category,
                   int servings, ArrayList<Ingredient> i){
@@ -21,6 +22,13 @@ public class Recipe implements Serializable {
         this.category = category;
         this.servings = servings;
         this.ingredients = i;
+        String answer = "";
+        for (int j = 0; j < AddIngredientPage.IngredientList.size(); j++){
+            Ingredient temp = AddIngredientPage.IngredientList.get(j);
+            String a = temp.getStringIngredient();
+            answer = answer + a + " \n";
+        }
+        this.StrIngredients = answer;
     }
 
     public Recipe(){
@@ -29,6 +37,7 @@ public class Recipe implements Serializable {
         category = null;
         servings = 0;
         ingredients = null;
+        StrIngredients = null;
     }
 
 
@@ -53,13 +62,17 @@ public class Recipe implements Serializable {
     }
 
     public String getstrIngredients(){
+        return this.StrIngredients;
+        /*
         String answer = "";
         for (int i = 0; i < AddIngredientPage.IngredientList.size(); i++){
             Ingredient temp = AddIngredientPage.IngredientList.get(i);
             String a = temp.getStringIngredient();
             answer = answer + a + " \n";
         }
+        this.StrIngredients = answer;
         return answer;
+        */
     }
 
     public void setName(String n){
