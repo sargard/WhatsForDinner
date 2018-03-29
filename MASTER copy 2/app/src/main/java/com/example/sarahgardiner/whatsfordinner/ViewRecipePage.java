@@ -55,11 +55,19 @@ public class ViewRecipePage extends AppCompatActivity {
 
 
     public void TakeOffMyWeekClick(View view) {
-        MyWeekPage.WeekRecipes.remove(r);
+        for(int i = 0; i < MyWeekPage.WeekRecipes.size(); i++){
+            Recipe temp = MyWeekPage.WeekRecipes.get(i);
+            if(temp.getName().equals(rName)){
+                MyWeekPage.WeekRecipes.remove(i);
+            }
+        }
+
+        Log.d("myTag", "arraylist size: "+ MyWeekPage.WeekRecipes.size());
         String msg = "Recipe Removed from Your Week";
         Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
         toast.show();
-        finish();
+        Intent intent = new Intent(this, adminMenu.class);
+        startActivity(intent);
     }
 
     public void AddToMyWeekClick(View view) {
@@ -67,14 +75,15 @@ public class ViewRecipePage extends AppCompatActivity {
         String msg = "Recipe Added to Your Week";
         Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
         toast.show();
-        finish();
+        Intent intent = new Intent(this, adminMenu.class);
+        startActivity(intent);
     }
 
     public void DeleteRecipeClick(View view) {
         for(int i = 0; i < CreateRecipePage.RecipeList.size(); i++){
             Recipe temp = CreateRecipePage.RecipeList.get(i);
             if(temp.getName().equals(rName)){
-                CreateRecipePage.RecipeList.remove(temp);
+                CreateRecipePage.RecipeList.remove(i);
             }
         }
 
