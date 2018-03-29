@@ -31,7 +31,7 @@ public class MyWeekPage extends AppCompatActivity {
             btn[i].setGravity(Gravity.CENTER);
             btn[i].setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
-                    Intent intent = new Intent(getBaseContext(), ViewRecipePage.class);
+                    Intent intent = new Intent(getBaseContext(), ViewRecipeWeekPage.class);
                     intent.putExtra("RecipeName", n);
                     startActivity(intent);
                     //startActivity(new Intent(BrowseRecipesPage.this, ViewRecipePage.class));

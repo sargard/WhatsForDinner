@@ -12,7 +12,7 @@ import android.widget.Toast;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 
-public class ViewRecipePage extends AppCompatActivity {
+public class ViewRecipeWeekPage extends AppCompatActivity {
 
     private String rName;
     private Recipe r;
@@ -20,13 +20,13 @@ public class ViewRecipePage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_recipe_page);
+        setContentView(R.layout.activity_view_recipe_week_page);
 
         rName = getIntent().getStringExtra("RecipeName");
         r = new Recipe();
 
-        for(int i = 0; i < CreateRecipePage.RecipeList.size(); i++){
-            Recipe temp = CreateRecipePage.RecipeList.get(i);
+        for(int i = 0; i < MyWeekPage.WeekRecipes.size(); i++){
+            Recipe temp = MyWeekPage.WeekRecipes.get(i);
             if(temp.getName().equals(rName)){
                 r = temp;
             }
@@ -51,9 +51,8 @@ public class ViewRecipePage extends AppCompatActivity {
         TextView textView12 = (TextView)findViewById(R.id.textView12);
         textView12.setText(ingred);
 
+
     }
-
-
     public void TakeOffMyWeekClick(View view) {
         for(int i = 0; i < MyWeekPage.WeekRecipes.size(); i++){
             Recipe temp = MyWeekPage.WeekRecipes.get(i);
@@ -70,45 +69,5 @@ public class ViewRecipePage extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void AddToMyWeekClick(View view) {
-        MyWeekPage.WeekRecipes.add(r);
-        String msg = "Recipe Added to Your Week";
-        Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
-        toast.show();
-        Intent intent = new Intent(this, adminMenu.class);
-        startActivity(intent);
-    }
 
-    public void DeleteRecipeClick(View view) {
-        for(int i = 0; i < CreateRecipePage.RecipeList.size(); i++){
-            Recipe temp = CreateRecipePage.RecipeList.get(i);
-            if(temp.getName().equals(rName)){
-                CreateRecipePage.RecipeList.remove(i);
-            }
-        }
-
-        //-------------save recipe list to phone -----------------------
-
-        String fn = "Recipes.ser";
-        //boolean test = new File("/data/data/com.example.sarahgardiner.whatsfordinner/Recipes.ser").createNewFile();
-
-        try {
-            FileOutputStream f = this.openFileOutput(fn, Context.MODE_PRIVATE);
-            ObjectOutputStream o = new ObjectOutputStream (f);
-            o.writeObject (CreateRecipePage.RecipeList);
-            o.close ();
-            Log.d("myTag", "File writing: "+ true);
-        }
-        catch ( Exception ex ) {
-            Log.d("myTag", "File writing: "+ false);
-            ex.printStackTrace ();
-        }
-
-        String msg = "Recipe Deleted";
-        Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
-        toast.show();
-        Intent intent = new Intent(this, adminMenu.class);
-        startActivity(intent);
-
-    }
 }

@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--suppress ALL -->
+<?xml version="1.0" encoding="utf-8"?><!-- suppress ALL -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sarahgardiner.whatsfordinner">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -27,8 +28,8 @@
         <activity android:name=".AddIngredientPage" />
         <activity android:name=".UserMenu" />
         <activity android:name=".Ingredient" />
-        <activity android:name=".ViewRecipePage"></activity>
+        <activity android:name=".ViewRecipePage" />
+        <activity android:name=".ViewRecipeWeekPage"></activity>
     </application>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
 </manifest>
