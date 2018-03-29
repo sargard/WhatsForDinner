@@ -19,6 +19,7 @@ public class BrowseRecipesPage extends AppCompatActivity {
         setContentView(R.layout.activity_browse_recipes_page);
 
         LinearLayout linearLayout = new LinearLayout(this);
+        linearLayout.setOrientation(LinearLayout.VERTICAL);
         Button btn[] = new Button[CreateRecipePage.RecipeList.size()];
         for(int i = 0; i < CreateRecipePage.RecipeList.size(); i++) {
             Recipe r = CreateRecipePage.RecipeList.get(i);

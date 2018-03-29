@@ -1,10 +1,12 @@
 package com.example.sarahgardiner.whatsfordinner;
 
+import java.io.Serializable;
+
 /**
  * Created by sarahgardiner on 3/11/18.
  */
 
-public class Ingredient {
+public class Ingredient implements Serializable {
     private String name;
     private String type;
     private String measurment;

@@ -1,12 +1,13 @@
 package com.example.sarahgardiner.whatsfordinner;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by sarahgardiner on 3/11/18.
  */
 
-public class Recipe {
+public class Recipe implements Serializable {
     private String name;
     private String instructions;
     private String category;

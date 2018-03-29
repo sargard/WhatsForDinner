@@ -1,6 +1,8 @@
 package com.example.sarahgardiner.whatsfordinner;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +11,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class CreateRecipePage extends AppCompatActivity {
@@ -22,7 +28,7 @@ public class CreateRecipePage extends AppCompatActivity {
     }
 
 
-    public void onSubmitClick(View view) {
+    public void onSubmitClick(View view) throws PackageManager.NameNotFoundException, IOException {
         //-------------- get recipe name ---------------------------------
         EditText mEdit   = (EditText)findViewById(R.id.recipeName);
         String rName = mEdit.getText().toString();
@@ -58,6 +64,23 @@ public class CreateRecipePage extends AppCompatActivity {
         }
 
         AddIngredientPage.IngredientList.clear();
+
+        //-------------save recipe list to phone -----------------------
+
+        String fn = "Recipes.ser";
+        //boolean test = new File("/data/data/com.example.sarahgardiner.whatsfordinner/Recipes.ser").createNewFile();
+
+        try {
+            FileOutputStream f = this.openFileOutput(fn, Context.MODE_PRIVATE);
+            ObjectOutputStream o = new ObjectOutputStream (f);
+            o.writeObject (RecipeList);
+            o.close ();
+            Log.d("myTag", "File writing: "+ true);
+        }
+        catch ( Exception ex ) {
+            Log.d("myTag", "File writing: "+ false);
+            ex.printStackTrace ();
+        }
 
         String msg = "Recipe Added";
         Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
