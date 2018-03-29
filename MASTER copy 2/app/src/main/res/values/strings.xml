@@ -21,6 +21,9 @@
     <string name="add_ingredient">Add Ingredient</string>
     <string name="search">Search</string>
     <string name="textview">TextView</string>
+    <string name="minus">-</string>
+    <string name="add">+</string>
+    <string name="delete">Delete</string>
     <string-array name="category_array">
         <item>Breakfast</item>
         <item>Lunch</item>

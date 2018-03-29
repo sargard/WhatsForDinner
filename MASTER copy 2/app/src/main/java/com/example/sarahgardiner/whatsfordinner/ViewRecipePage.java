@@ -1,12 +1,21 @@
 package com.example.sarahgardiner.whatsfordinner;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 
 public class ViewRecipePage extends AppCompatActivity {
 
     private String rName;
+    private Recipe r;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,7 +24,7 @@ public class ViewRecipePage extends AppCompatActivity {
 
         rName = getIntent().getStringExtra("RecipeName");
 
-        Recipe r = new Recipe();
+        r = new Recipe();
         for(int i = 0; i < CreateRecipePage.RecipeList.size(); i++){
             Recipe temp = CreateRecipePage.RecipeList.get(i);
             if(temp.getName().equals(rName)){
@@ -45,4 +54,52 @@ public class ViewRecipePage extends AppCompatActivity {
     }
 
 
+    public void TakeOffMyWeekClick(View view) {
+        MyWeekPage.WeekRecipes.remove(r);
+        String msg = "Recipe Removed from Your Week";
+        Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
+        toast.show();
+        finish();
+    }
+
+    public void AddToMyWeekClick(View view) {
+        MyWeekPage.WeekRecipes.add(r);
+        String msg = "Recipe Added to Your Week";
+        Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
+        toast.show();
+        finish();
+    }
+
+    public void DeleteRecipeClick(View view) {
+        for(int i = 0; i < CreateRecipePage.RecipeList.size(); i++){
+            Recipe temp = CreateRecipePage.RecipeList.get(i);
+            if(temp.getName().equals(rName)){
+                CreateRecipePage.RecipeList.remove(temp);
+            }
+        }
+
+        //-------------save recipe list to phone -----------------------
+
+        String fn = "Recipes.ser";
+        //boolean test = new File("/data/data/com.example.sarahgardiner.whatsfordinner/Recipes.ser").createNewFile();
+
+        try {
+            FileOutputStream f = this.openFileOutput(fn, Context.MODE_PRIVATE);
+            ObjectOutputStream o = new ObjectOutputStream (f);
+            o.writeObject (CreateRecipePage.RecipeList);
+            o.close ();
+            Log.d("myTag", "File writing: "+ true);
+        }
+        catch ( Exception ex ) {
+            Log.d("myTag", "File writing: "+ false);
+            ex.printStackTrace ();
+        }
+
+        String msg = "Recipe Deleted";
+        Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
+        toast.show();
+        Intent intent = new Intent(this, adminMenu.class);
+        startActivity(intent);
+
+    }
 }
