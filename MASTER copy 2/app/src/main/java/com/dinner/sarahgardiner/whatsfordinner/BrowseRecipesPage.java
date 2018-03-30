@@ -1,14 +1,12 @@
-package com.example.sarahgardiner.whatsfordinner;
+package com.dinner.sarahgardiner.whatsfordinner;
 
 import android.content.Intent;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 public class BrowseRecipesPage extends AppCompatActivity {

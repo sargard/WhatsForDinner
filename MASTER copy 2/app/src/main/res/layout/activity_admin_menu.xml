@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#d0aae6"
-    tools:context="com.example.sarahgardiner.whatsfordinner.adminMenu">
+    tools:context="com.dinner.sarahgardiner.whatsfordinner.adminMenu">
 
     <Button
         android:id="@+id/button"

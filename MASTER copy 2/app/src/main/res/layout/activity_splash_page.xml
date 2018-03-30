@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:onClick="onSplashPageClick"
-    tools:context="com.example.sarahgardiner.whatsfordinner.SplashPage">
+    tools:context="com.dinner.sarahgardiner.whatsfordinner.SplashPage">
 
     <TextView
         android:id="@+id/textView"

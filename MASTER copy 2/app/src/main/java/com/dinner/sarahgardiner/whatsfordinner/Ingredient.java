@@ -1,4 +1,4 @@
-package com.example.sarahgardiner.whatsfordinner;
+package com.dinner.sarahgardiner.whatsfordinner;
 
 import java.io.Serializable;
 
@@ -42,6 +42,13 @@ public class Ingredient implements Serializable {
             temp = .75;
         }
         amount = temp + b;
+    }
+
+    public Ingredient(){
+        this.name = null;
+        this.type= null;
+        this.measurment = null;
+        this.amount = 0.0;
     }
 
     public String getName(){

@@ -1,4 +1,4 @@
-package com.example.sarahgardiner.whatsfordinner;
+package com.dinner.sarahgardiner.whatsfordinner;
 
 import java.io.Serializable;
 import java.util.ArrayList;

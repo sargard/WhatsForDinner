@@ -1,4 +1,4 @@
-package com.example.sarahgardiner.whatsfordinner;
+package com.dinner.sarahgardiner.whatsfordinner;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
