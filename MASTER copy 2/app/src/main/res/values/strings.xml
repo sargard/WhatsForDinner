@@ -30,10 +30,15 @@
         <item>Dinner</item>
         <item>Dessert</item>
         <item>InstantPot</item>
+        <item>Slow Cooker</item>
+        <item>Kids Menu</item>
+        <item>Beef</item>
+        <item>Chicken</item>
         <item>5 Minute Meal</item>
         <item>Vegan</item>
         <item>Vegetarian</item>
         <item>Make Ahead Meal</item>
+        <item>All</item>
     </string-array>
     <string-array name="measurement_array">
         <item>Tsp</item>

@@ -10,7 +10,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 public class SearchResultsPage extends AppCompatActivity {
-    //testing tiffany pls work
+    //testing tiffany pls work IT WORKED!!!!! -SARAH
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +29,7 @@ public class SearchResultsPage extends AppCompatActivity {
             btn[i].setText(n);
             btn[i].setTextSize(20);
             btn[i].setGravity(Gravity.CENTER);
+
             btn[i].setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     Log.d("myTag", "hello 2: "+ "hi");
@@ -38,8 +40,11 @@ public class SearchResultsPage extends AppCompatActivity {
                     //startActivity(new Intent(BrowseRecipesPage.this, ViewRecipePage.class));
                 }
             });
+
             linearLayout.addView(btn[i]);
         }
+
+        SearchPage.searchArray.clear();
 
         this.setContentView(linearLayout, new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
