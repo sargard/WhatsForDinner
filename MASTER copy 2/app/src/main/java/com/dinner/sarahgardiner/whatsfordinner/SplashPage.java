@@ -17,5 +17,7 @@ public class SplashPage extends AppCompatActivity {
         Intent intent = new Intent(this, loginpage.class);
         startActivity(intent);
         finish();
+
+        //splash page
     }
 }

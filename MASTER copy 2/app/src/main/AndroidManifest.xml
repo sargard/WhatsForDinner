@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?><!-- suppress ALL -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dinner.sarahgardiner.whatsfordinner">
+    package="com.dinner.sarahgardiner.whatsfordinner"
+    android:installLocation="auto"
+    android:versionCode="10"
+    android:versionName="10.0">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
