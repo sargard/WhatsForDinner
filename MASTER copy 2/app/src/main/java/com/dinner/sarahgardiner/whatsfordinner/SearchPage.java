@@ -25,18 +25,23 @@ public class SearchPage extends AppCompatActivity {
         String rCategory = cat.getSelectedItem().toString();
         Log.d("myTag", "rCategory: "+ rCategory);
 
-        for(int i = 0; i < CreateRecipePage.RecipeList.size(); i++) {
-            Recipe temp = new Recipe();
-            temp = CreateRecipePage.RecipeList.get(i);
-            Log.d("myTag", "rName: "+ temp.getName());
-            if (temp.getCategory() == rCategory){
-                searchArray.add(temp);
-            }
+        if(rCategory.equals("All")){
+            Intent intent = new Intent(this, BrowseRecipesPage.class);
+            startActivity(intent);
         }
+        else {
+            for (int i = 0; i < CreateRecipePage.RecipeList.size(); i++) {
+                Recipe temp = new Recipe();
+                temp = CreateRecipePage.RecipeList.get(i);
+                Log.d("myTag", "rName: " + temp.getName());
+                if (temp.getCategory() == rCategory) {
+                    searchArray.add(temp);
+                }
+            }
 
-        Intent intent = new Intent(this, SearchResultsPage.class);
-        startActivity(intent);
-
+            Intent intent = new Intent(this, SearchResultsPage.class);
+            startActivity(intent);
+        }
 
     }
 }
