@@ -3,6 +3,7 @@ package com.dinner.sarahgardiner.whatsfordinner;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +25,7 @@ public class MyWeekPage extends AppCompatActivity {
         Button btn[] = new Button[WeekRecipes.size()];
         for(int i = 0; i < WeekRecipes.size(); i++) {
             Recipe r = WeekRecipes.get(i);
+            Log.d("myTag", "RecipeName: "+ r.getName());
             final String n = r.getName();
             btn[i] = new Button(this);
             btn[i].setText(n);
