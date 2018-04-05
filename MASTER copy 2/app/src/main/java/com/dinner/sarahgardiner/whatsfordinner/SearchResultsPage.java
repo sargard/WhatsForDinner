@@ -20,7 +20,6 @@ public class SearchResultsPage extends AppCompatActivity {
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(LinearLayout.VERTICAL);
         Button btn[] = new Button[SearchPage.searchArray.size()];
-        Log.d("myTag", "rName0: "+ 0);
         for(int i = 0; i < SearchPage.searchArray.size(); i++) {
             Recipe r = SearchPage.searchArray.get(i);
             Log.d("myTag", "rName1: "+ r.getName());
@@ -29,7 +28,7 @@ public class SearchResultsPage extends AppCompatActivity {
             btn[i].setText(n);
             btn[i].setTextSize(20);
             btn[i].setGravity(Gravity.CENTER);
-
+/*
             btn[i].setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     Log.d("myTag", "hello 2: "+ "hi");
@@ -40,7 +39,7 @@ public class SearchResultsPage extends AppCompatActivity {
                     //startActivity(new Intent(BrowseRecipesPage.this, ViewRecipePage.class));
                 }
             });
-
+*/
             linearLayout.addView(btn[i]);
         }
 
