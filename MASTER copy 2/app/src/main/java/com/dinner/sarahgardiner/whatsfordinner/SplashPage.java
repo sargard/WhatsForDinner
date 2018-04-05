@@ -34,7 +34,7 @@ public class SplashPage extends AppCompatActivity {
             Log.d("myTag", "File writing: "+ false);
             e.printStackTrace();
         }
-        Intent intent = new Intent(this, adminMenu.class);
+        Intent intent = new Intent(this, loginpage.class);
         startActivity(intent);
 
         //splash page

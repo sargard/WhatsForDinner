@@ -28,18 +28,18 @@ public class SearchResultsPage extends AppCompatActivity {
             btn[i].setText(n);
             btn[i].setTextSize(20);
             btn[i].setGravity(Gravity.CENTER);
-/*
+
             btn[i].setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     Log.d("myTag", "hello 2: "+ "hi");
 
                     Intent intent = new Intent(getBaseContext(), ViewRecipePage.class);
-                    intent.putExtra("hello3", n);
+                    intent.putExtra("RecipeName", n);
                     startActivity(intent);
-                    //startActivity(new Intent(BrowseRecipesPage.this, ViewRecipePage.class));
+                    //startActivity(new Intent(SearchResultsPage.this, ViewRecipePage.class));
                 }
             });
-*/
+
             linearLayout.addView(btn[i]);
         }
 
