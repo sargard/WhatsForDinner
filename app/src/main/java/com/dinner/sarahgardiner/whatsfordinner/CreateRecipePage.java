@@ -56,8 +56,12 @@ public class CreateRecipePage extends AppCompatActivity {
         }
         else {
             Recipe r = new Recipe(rName, rInstructions, rCategory,
-                    rServing, AddIngredientPage.IngredientList);
+                    rServing);//, AddIngredientPage.IngredientList);
             //add recipe to arraylist thing
+            for(int i = 0; i < AddIngredientPage.IngredientList.size(); i++){
+                Ingredient in = AddIngredientPage.IngredientList.get(i);
+                r.addIngredient(in);
+            }
             String ingred = r.getstrIngredients();
             Log.d("myTag", "ingred (create): "+ ingred);
             RecipeList.add(r);

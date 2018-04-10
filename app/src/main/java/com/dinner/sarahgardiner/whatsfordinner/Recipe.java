@@ -11,17 +11,17 @@ public class Recipe implements Serializable {
     private String name;
     private String instructions;
     private String category;
-    private ArrayList ingredients;
+    private ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>();
     private int servings;
     private String StrIngredients;
 
     public Recipe(String name, String instructions, String category,
-                  int servings, ArrayList<Ingredient> i){
+                  int servings){//, ArrayList<Ingredient> i){
         this.name = name;
         this.instructions = instructions;
         this.category = category;
         this.servings = servings;
-        this.ingredients = i;
+        //this.ingredients = i;
         String answer = "";
         for (int j = 0; j < AddIngredientPage.IngredientList.size(); j++){
             Ingredient temp = AddIngredientPage.IngredientList.get(j);
@@ -91,11 +91,12 @@ public class Recipe implements Serializable {
         servings = s;
     }
 
-    public void setIngredients(ArrayList<Ingredient> i){
-        ingredients = i;
+    public void addIngredient(Ingredient i){
+        ingredients.add(i);
     }
 
-    public void addRecipeToFile(Recipe r) {
-
+    public Ingredient getIngredientsOneAtATime(int index){
+        return (Ingredient) ingredients.get(index);
     }
+
 }

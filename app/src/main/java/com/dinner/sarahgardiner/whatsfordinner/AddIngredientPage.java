@@ -45,10 +45,6 @@ public class AddIngredientPage extends AppCompatActivity {
 
         Ingredient I = new Ingredient(IngredientName, IngredientType, IngredientMeasurement,
                 IngredientFractions, D);
-        //I.setAmount(IngredientFractions, D);
-        //I.setName(IngredientName);
-        //I.setType(IngredientType);
-        // I.setMeasurement(IngredientMeasurement);
 
         AddIngredientPage.IngredientList.add(I);
 
