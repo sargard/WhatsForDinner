@@ -19,7 +19,7 @@ public class adminMenu extends AppCompatActivity {
     }
 
     public void onBrowseClick(View view) {
-        Intent intent = new Intent(this, BrowseRecipesPage.class);
+        Intent intent = new Intent(this, BrowseRecipeAdminPage.class);
         startActivity(intent);
     }
 

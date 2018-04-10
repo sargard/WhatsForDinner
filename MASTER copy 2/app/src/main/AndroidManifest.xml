@@ -15,26 +15,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.dinner.sarahgardiner.whatsfordinner.SplashPage">
+        <activity android:name=".SplashPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.dinner.sarahgardiner.whatsfordinner.loginpage" />
-        <activity android:name="com.dinner.sarahgardiner.whatsfordinner.adminMenu" />
-        <activity android:name="com.dinner.sarahgardiner.whatsfordinner.BrowseRecipesPage" />
-        <activity android:name="com.dinner.sarahgardiner.whatsfordinner.GroceryListPage" />
-        <activity android:name="com.dinner.sarahgardiner.whatsfordinner.MyWeekPage" />
-        <activity android:name="com.dinner.sarahgardiner.whatsfordinner.SearchPage" />
-        <activity android:name="com.dinner.sarahgardiner.whatsfordinner.CreateRecipePage" />
-        <activity android:name="com.dinner.sarahgardiner.whatsfordinner.AddIngredientPage" />
-        <activity android:name="com.dinner.sarahgardiner.whatsfordinner.UserMenu" />
-        <activity android:name="com.dinner.sarahgardiner.whatsfordinner.Ingredient" />
-        <activity android:name="com.dinner.sarahgardiner.whatsfordinner.ViewRecipePage" />
-        <activity android:name="com.dinner.sarahgardiner.whatsfordinner.ViewRecipeWeekPage" />
-        <activity android:name="com.dinner.sarahgardiner.whatsfordinner.SearchResultsPage"></activity>
+        <activity android:name=".loginpage" />
+        <activity android:name=".adminMenu" />
+        <activity android:name=".BrowseRecipesPage" />
+        <activity android:name=".GroceryListPage" />
+        <activity android:name=".MyWeekPage" />
+        <activity android:name=".SearchPage" />
+        <activity android:name=".CreateRecipePage" />
+        <activity android:name=".AddIngredientPage" />
+        <activity android:name=".UserMenu" />
+        <activity android:name=".Ingredient" />
+        <activity android:name=".ViewRecipePage" />
+        <activity android:name=".ViewRecipeWeekPage" />
+        <activity android:name=".SearchResultsPage" />
+        <activity android:name=".ViewRecipeAdminPage" />
+        <activity android:name=".BrowseRecipeAdminPage"></activity>
     </application>
 
 </manifest>

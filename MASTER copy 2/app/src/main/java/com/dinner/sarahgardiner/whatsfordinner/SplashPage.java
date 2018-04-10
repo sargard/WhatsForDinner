@@ -22,6 +22,7 @@ public class SplashPage extends AppCompatActivity {
         // String packageName = this.getPackageName();
         //String path = getFilesDir().getAbsolutePath()+ packageName;
         // String FILENAME = "Recipes.ser";
+/*
         try {
             String fn = "/data/data/com.dinner.sarahgardiner.whatsfordinner/files/Recipes.ser";
             ObjectInputStream input = new ObjectInputStream(new FileInputStream(fn));
@@ -33,7 +34,7 @@ public class SplashPage extends AppCompatActivity {
         catch (Exception e) {
             Log.d("myTag", "File writing: "+ false);
             e.printStackTrace();
-        }
+        }*/
         Intent intent = new Intent(this, loginpage.class);
         startActivity(intent);
 

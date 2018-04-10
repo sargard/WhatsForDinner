@@ -9,19 +9,22 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 
-public class ViewRecipePage extends AppCompatActivity {
+public class ViewRecipeAdminPage extends AppCompatActivity {
 
     private String rName;
     private Recipe r;
+    public static ArrayList<Recipe> UserRecipes = new ArrayList<Recipe>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_recipe_page);
-
+        setContentView(R.layout.activity_view_recipe_admin_page);
         rName = getIntent().getStringExtra("RecipeName");
         r = new Recipe();
 
@@ -50,9 +53,7 @@ public class ViewRecipePage extends AppCompatActivity {
 
         TextView textView12 = (TextView)findViewById(R.id.textView12);
         textView12.setText(ingred);
-
     }
-
 
     public void TakeOffMyWeekClick(View view) {
         for(int i = 0; i < MyWeekPage.WeekRecipes.size(); i++){
@@ -99,7 +100,6 @@ public class ViewRecipePage extends AppCompatActivity {
             ex.printStackTrace ();
         }
 
-
         String msg = "Recipe Added to Your Week";
         Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
         toast.show();
@@ -107,4 +107,52 @@ public class ViewRecipePage extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void DeleteRecipeClick(View view) {
+        for(int i = 0; i < CreateRecipePage.RecipeList.size(); i++){
+            Recipe temp = CreateRecipePage.RecipeList.get(i);
+            if(temp.getName().equals(rName)){
+                CreateRecipePage.RecipeList.remove(i);
+            }
+        }
+
+        //-------------save recipe list to phone -----------------------
+
+        String fn = "RecipesAdmin.ser";
+
+        try {
+            FileOutputStream f = this.openFileOutput(fn, Context.MODE_PRIVATE);
+            ObjectOutputStream o = new ObjectOutputStream (f);
+            o.writeObject (CreateRecipePage.RecipeList);
+            o.close ();
+            Log.d("myTag", "File writing: "+ true);
+        }
+        catch ( Exception ex ) {
+            Log.d("myTag", "File writing: "+ false);
+            ex.printStackTrace ();
+        }
+
+        String msg = "Recipe Deleted";
+        Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
+        toast.show();
+        Intent intent = new Intent(this, adminMenu.class);
+        startActivity(intent);
+
+    }
+
+    public void onPushClick(View view) {
+        UserRecipes.add(r);
+
+        String fn = "UserRecipes.ser";
+        try {
+            FileOutputStream f = this.openFileOutput(fn, Context.MODE_PRIVATE);
+            ObjectOutputStream o = new ObjectOutputStream (f);
+            o.writeObject (MyWeekPage.WeekRecipes);
+            o.close ();
+            Log.d("myTag", "File writing: "+ true);
+        }
+        catch ( Exception ex ) {
+            Log.d("myTag", "File writing: "+ false);
+            ex.printStackTrace ();
+        }
+    }
 }

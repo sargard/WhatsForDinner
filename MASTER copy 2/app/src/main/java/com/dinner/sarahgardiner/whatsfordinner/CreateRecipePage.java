@@ -67,9 +67,7 @@ public class CreateRecipePage extends AppCompatActivity {
         AddIngredientPage.IngredientList.clear();
 
         //-------------save recipe list to phone -----------------------
-
-        String fn = "Recipes.ser";
-        //boolean test = new File("/data/data/com.example.sarahgardiner.whatsfordinner/Recipes.ser").createNewFile();
+        String fn = "RecipesAdmin.ser";
 
         try {
             FileOutputStream f = this.openFileOutput(fn, Context.MODE_PRIVATE);
@@ -82,6 +80,20 @@ public class CreateRecipePage extends AppCompatActivity {
             Log.d("myTag", "File writing: "+ false);
             ex.printStackTrace ();
         }
+        /*
+        String fn = "RecipesAdmin.ser";
+
+        try {
+            FileOutputStream f = this.openFileOutput(fn, Context.MODE_PRIVATE);
+            ObjectOutputStream o = new ObjectOutputStream (f);
+            o.writeObject (RecipeList);
+            o.close ();
+            Log.d("myTag", "File writing: "+ true);
+        }
+        catch ( Exception ex ) {
+            Log.d("myTag", "File writing: "+ false);
+            ex.printStackTrace ();
+        }*/
 
         String msg = "Recipe Added";
         Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
