@@ -7,6 +7,7 @@
     android:background="#d0aae6"
     tools:context="com.dinner.sarahgardiner.whatsfordinner.CreateRecipePage">
 
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="141dp"
@@ -135,4 +136,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/recipeServings" />
+
+
+
 </android.support.constraint.ConstraintLayout>

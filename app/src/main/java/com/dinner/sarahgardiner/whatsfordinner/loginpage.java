@@ -13,7 +13,7 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 public class loginpage extends AppCompatActivity {
-    static public String uname;
+    public static String uname;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +22,7 @@ public class loginpage extends AppCompatActivity {
 
     public void onadminClick(View view) throws PackageManager.NameNotFoundException {
         EditText mEdit   = (EditText)findViewById(R.id.username);
-        uname = mEdit.getText().toString();
+        uname = mEdit.getText().toString().toLowerCase();
         Log.d("myTag", "username: "+ uname);
         String filename = uname + "Week.ser";
         Log.d("myTag", "filename: "+ filename);

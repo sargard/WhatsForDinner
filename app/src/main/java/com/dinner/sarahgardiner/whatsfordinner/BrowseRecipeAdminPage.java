@@ -5,8 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 public class BrowseRecipeAdminPage extends AppCompatActivity {
 
@@ -14,6 +16,9 @@ public class BrowseRecipeAdminPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browse_recipe_admin_page);
+
+        ScrollView scrollView = new ScrollView(this);
+        scrollView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(LinearLayout.VERTICAL);
         Button btn[] = new Button[CreateRecipePage.RecipeList.size()];
@@ -34,9 +39,12 @@ public class BrowseRecipeAdminPage extends AppCompatActivity {
             });
             linearLayout.addView(btn[i]);
         }
+        scrollView.addView(linearLayout);
 
-        this.setContentView(linearLayout, new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
+        this.setContentView(scrollView);
+
+        //this.setContentView(linearLayout, new LinearLayout.LayoutParams(
+          //      LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
 
     }
 }

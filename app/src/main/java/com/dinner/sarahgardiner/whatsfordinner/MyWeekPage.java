@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 import java.util.ArrayList;
 
@@ -20,6 +22,8 @@ public class MyWeekPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_week_page);
 
+        ScrollView scrollView = new ScrollView(this);
+        scrollView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(LinearLayout.VERTICAL);
         Button btn[] = new Button[WeekRecipes.size()];
@@ -42,8 +46,12 @@ public class MyWeekPage extends AppCompatActivity {
             linearLayout.addView(btn[i]);
         }
 
-        this.setContentView(linearLayout, new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
+        scrollView.addView(linearLayout);
+
+        this.setContentView(scrollView);
+
+       // this.setContentView(linearLayout, new LinearLayout.LayoutParams(
+         //       LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
 
 
     }

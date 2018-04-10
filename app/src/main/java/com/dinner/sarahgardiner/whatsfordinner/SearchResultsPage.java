@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 public class SearchResultsPage extends AppCompatActivity {
     //testing tiffany pls work IT WORKED!!!!! -SARAH
@@ -17,6 +19,8 @@ public class SearchResultsPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_results_page);
 
+        ScrollView scrollView = new ScrollView(this);
+        scrollView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(LinearLayout.VERTICAL);
         Button btn[] = new Button[SearchPage.searchArray.size()];
@@ -45,8 +49,12 @@ public class SearchResultsPage extends AppCompatActivity {
 
         SearchPage.searchArray.clear();
 
-        this.setContentView(linearLayout, new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
+        scrollView.addView(linearLayout);
+
+        this.setContentView(scrollView);
+
+       // this.setContentView(linearLayout, new LinearLayout.LayoutParams(
+              //  LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
 
     }
 }

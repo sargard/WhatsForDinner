@@ -34,7 +34,7 @@ public class adminMenu extends AppCompatActivity {
     }
 
     public void onGroceryClick(View view) {
-        Intent intent = new Intent(this, GroceryListPage.class);
+        Intent intent = new Intent(this, GroceryPage.class);
         startActivity(intent);
     }
 }

@@ -36,7 +36,11 @@
         <activity android:name=".ViewRecipeWeekPage" />
         <activity android:name=".SearchResultsPage" />
         <activity android:name=".ViewRecipeAdminPage" />
-        <activity android:name=".BrowseRecipeAdminPage"></activity>
+        <activity android:name=".BrowseRecipeAdminPage" />
+        <activity
+            android:name=".GroceryPage"
+            android:label="@string/title_activity_grocery_page"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
