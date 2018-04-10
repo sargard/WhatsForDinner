@@ -24,17 +24,21 @@ public class GroceryListPage extends AppCompatActivity {
 
 
         for(int i = 0; i < MyWeekPage.WeekRecipes.size(); i++){
+            Log.d("myTag", "i: "+ i);
             Recipe r = MyWeekPage.WeekRecipes.get(i);
             Log.d("myTag", "RecipeName: "+ r.getName());
-            ArrayList<Ingredient> rIngredients;
-            rIngredients = (ArrayList<Ingredient>) r.getIngredients().clone();
+            ArrayList<Ingredient> rIngredients = (ArrayList<Ingredient>)r.getIngredients().clone();
+            Log.d("myTag", "Ingredients!!!!!: "+ r.getstrIngredients());
+            Log.d("myTag", "size: "+ rIngredients.size());
             for(int k = 0; k < rIngredients.size(); k++){
+                Log.d("myTag", "k: "+ k);
                 Ingredient g = rIngredients.get(k);
                 Log.d("myTag", "Ingredient: "+ g.getStringIngredient());
                 GroceryListObj.add(g);
             }
         }
 
+        //tiffany below here please :) please generate check boxes instead of buttons
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(LinearLayout.VERTICAL);
         Button btn[] = new Button[GroceryListObj.size()];
