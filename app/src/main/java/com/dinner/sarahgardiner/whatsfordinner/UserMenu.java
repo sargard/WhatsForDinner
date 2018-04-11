@@ -32,4 +32,9 @@ public class UserMenu extends AppCompatActivity {
         Intent intent = new Intent(this, GroceryPage.class);
         startActivity(intent);
     }
+
+    public void onFaqClick(View view) {
+        Intent intent = new Intent(this, FaqUserPage.class);
+        startActivity(intent);
+    }
 }

@@ -40,6 +40,10 @@
         <activity
             android:name=".GroceryPage"
             android:label="@string/title_activity_grocery_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FaqUserPage"
+            android:label="@string/title_activity_faq_user_page"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
