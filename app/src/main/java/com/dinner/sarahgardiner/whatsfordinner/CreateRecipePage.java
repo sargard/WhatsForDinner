@@ -30,7 +30,7 @@ public class CreateRecipePage extends AppCompatActivity {
     public void onSubmitClick(View view) throws PackageManager.NameNotFoundException, IOException {
         //-------------- get recipe name ---------------------------------
         EditText mEdit   = (EditText)findViewById(R.id.recipeName);
-        String rName = mEdit.getText().toString();
+        String rName = mEdit.getText().toString().toLowerCase();
         Log.d("myTag", "RecipeName: "+ rName);
 
         //-------------- get serving size ---------------------------------

@@ -57,7 +57,8 @@
         <item>2/3</item>
         <item>3/4</item>
     </string-array>
-    <string-array name="digit_array">y
+    <string-array name="digit_array">
+        <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -177,4 +178,5 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="push_to_users">Push to Users</string>
 </resources>
