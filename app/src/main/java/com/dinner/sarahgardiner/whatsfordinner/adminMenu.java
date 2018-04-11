@@ -39,8 +39,8 @@ public class adminMenu extends AppCompatActivity {
     }
 
     public void onFaqClick(View view) {
-        //Intent intent = new Intent(this, FaqAdminPage.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, FaqAdminPage.class);
+        startActivity(intent);
     }
 
 }
