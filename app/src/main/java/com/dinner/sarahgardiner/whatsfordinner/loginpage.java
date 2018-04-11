@@ -66,6 +66,7 @@ public class loginpage extends AppCompatActivity {
         }
         Intent intent = new Intent(this, adminMenu.class);
         startActivity(intent);
+
     }
 
     public void onUserClick(View view) {
