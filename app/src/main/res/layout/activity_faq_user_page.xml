@@ -5,10 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@color/background"
     tools:context="com.dinner.sarahgardiner.whatsfordinner.FaqUserPage">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
+        android:background="@color/header"
         android:layout_width="match_parent"
         android:layout_height="164dp"
         android:fitsSystemWindows="true"
