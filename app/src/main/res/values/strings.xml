@@ -90,23 +90,68 @@
     </string-array>
     <string name="title_activity_grocery_page">GroceryPage</string>
     <string name="large_text_user">
-1.       To view available recipes, click the “Browse Recipes” button.\n\n
-2.      To view a recipe’s details from the list, click the recipe’s name.\n\n
-3.       To add the recipe to your week, click the button with the “+” sign on it.\n\n
-4.      To see what recipes, you’ve chosen for the week, click the “My Week” button.\n\n
-5.       To remove a recipe from your week, click the recipe’s name. After clicking the name, you
-        will see the recipe description. From there, click the button with the “-“ sign on it to remove
-        the recipe from your week.\n\n
-6.        To search for recipes based on tags, click the “Search” button.\n\n
-7.      To choose a tag to search by, click the dropdown menu on the search page. Once you see the dropdown
-        with the different tag options, click the one you are looking for. Once you’ve selected the tag
-        you want to search for, click “Search”. The app will then display all recipes with tags that match what you selected.\n\n
-8.      To see what ingredients have been added to your shopping list for the week, click the “Grocery
+        1.       To view available recipes, click the “Browse Recipes” button.\n\n
+        2.      To view a recipe’s details from the list, click the recipe’s name.\n\n
+        3.       To add the recipe to your week, click the button with the “+” sign on it.\n\n
+        4.      To see what recipes, you’ve chosen for the week, click the “My Week” button.\n\n
+        5.       To remove a recipe from your week, click the recipe’s name. After clicking the name, you
+                will see the recipe description. From there, click the button with the “-“ sign on it to remove
+                the recipe from your week.\n\n
+        6.        To search for recipes based on tags, click the “Search” button.\n\n
+        7.      To choose a tag to search by, click the dropdown menu on the search page. Once you see the dropdown
+                with the different tag options, click the one you are looking for. Once you’ve selected the tag
+                you want to search for, click “Search”. The app will then display all recipes with tags that match what you selected.\n\n
+        8.      To see what ingredients have been added to your shopping list for the week, click the “Grocery
         List” button.\n\n
+        9.       The grocery list will combine like ingredients and display them in a total amount that is equal to the minimum required amount to make all recipes chosen for the week.\n\n
+
     </string>
     <string name="push_to_users">Push to Users</string>
     <string name="faq">FAQ</string>
     <string name="title_activity_faq_user_page">FaqUserPage</string>
     <string name="faqs">FAQs</string>
+    <string name="title_activity_faq_admin_page">FaqAdminPage</string>
+    <string name="large_text_admin">
+        1.       To view available recipes, click the “Browse Recipes” button.\n\n
+        2.      To view a recipe from the list, click the recipe’s name.\n\n
+        3.       To add the recipe to your week, click the button with the “+” sign on it.\n\n
+        4.      To remove a recipe from the recipe list, click the “Delete” button.\n\n
+        5.       To add a new recipe to the app, click the “Create Recipe” button.\n\n
+        6.        To name the recipe, click on the line next to “Name of Recipe”. Once you’ve clicked
+        on the line, a cursor will appear on the line. Simply type in the name of the recipe you want
+        to make on this line to make the name for the recipe.\n\n
+        7.      To choose a tag for the recipe, click the dropdown beneath “Name of Recipe”. A dropdown
+        with a list of tags will appear. Select the tag you wish to give the recipe.\n\n
+        8.      To enter a number of servings for a recipe, click on the line next to the word “Servings”.
+        A cursor will appear on the line. Simply type in a number to show how many servings the recipe will make.\n\n
+        9.        To add an ingredient to the recipe, click the button that says “Add Ingredient” that
+        is next to the word “Instructions”.\n\n
+        10.        To enter a name for an ingredient, click the line next to “Name” and a cursor will
+        appear. Simply type the name of the ingredient into this line.\n\n
+        11.      To choose a quantity for an ingredient, use the three dropdown tabs underneath the words “How Much?”.\n\n
+        12.        The first tab under “How Much?” is for whole numbers. The second tab is for fractions.
+        The third tab for choosing what size the ingredients come in (Tsp, Tbsp, Cup).\n\n
+        13.    To choose a tag for the ingredient, click on the dropdown below the three tabs for “How Much?”.
+        You will see a list of different tags for an ingredient and can choose which one best suits the ingredient you are adding.\n\n
+        14.      Once all the details for the ingredient are filled in, click the button labeled “Add
+        Ingredient” to add the finished ingredient to the recipe.\n\n
+        15.      To add instructions to the recipe, click on the empty space below the “Add Ingredient”
+        button and above the “Add Recipe” button. A keyboard will pop-up allowing you to type in the instructions for the recipe.\n\n
+        16.      To add the recipe to the database once it is completed, click on the “Add Recipe” button
+        at the bottom of the screen.\n\n
+        17.      To see what recipes, you’ve chosen for the week, click the “My Week” button.\n\n
+        18.        To remove a recipe from your week, click the recipe’s name. After clicking the name, you
+        will see the recipe description. From there, click the button with the “-“ sign on it to remove the recipe from your week.\n\n
+        19.       To search for recipes based on tags, click the “Search” button.\n\n
+        20.        To choose a tag to search by, click the dropdown menu on the search page. Once you
+        see the dropdown with the different tag options, click the one you are looking for. Once you’ve
+        selected the tag you want to search for, click “Search”. The app will then display all recipes with tags that match what you selected.\n\n
+        21.      To see what ingredients have been added to your shopping list for the week, click the “Grocery List” button.\n\n
+        22.       The grocery list will combine like ingredients and display them in a total amount that
+        is equal to the minimum required amount to make all recipes chosen for the week.\n\n\n\n\n\n\n
+
+    </string>
     <string name="todo">TODO</string>
+
+
 </resources>
