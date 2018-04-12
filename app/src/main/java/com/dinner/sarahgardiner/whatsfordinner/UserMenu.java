@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class UserMenu extends AppCompatActivity {
 
@@ -37,4 +38,19 @@ public class UserMenu extends AppCompatActivity {
         Intent intent = new Intent(this, FaqUserPage.class);
         startActivity(intent);
     }
+
+    public void onDeleteClick(View view) {
+        addGroceryItemPage.AddedGroceries.clear();
+        String msg = "Deleted";
+        Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
+        toast.show();
+    }
+
+
+    public void onAddGroceryClick(View view) {
+        Intent intent = new Intent(this, addGroceryItemPage.class);
+        startActivity(intent);
+    }
 }
+
+

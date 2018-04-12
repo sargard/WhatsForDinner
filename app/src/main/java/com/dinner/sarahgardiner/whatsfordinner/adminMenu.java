@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class adminMenu extends AppCompatActivity {
 
@@ -43,4 +44,15 @@ public class adminMenu extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onAddGroceryClick(View view) {
+        Intent intent = new Intent(this, addGroceryItemPage.class);
+        startActivity(intent);
+    }
+
+    public void onDeleteClick(View view) {
+        addGroceryItemPage.AddedGroceries.clear();
+        String msg = "Deleted";
+        Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
+        toast.show();
+    }
 }

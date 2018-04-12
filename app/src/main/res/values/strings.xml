@@ -103,7 +103,11 @@
                 you want to search for, click “Search”. The app will then display all recipes with tags that match what you selected.\n\n
         8.      To see what ingredients have been added to your shopping list for the week, click the “Grocery
         List” button.\n\n
-        9.       The grocery list will combine like ingredients and display them in a total amount that is equal to the minimum required amount to make all recipes chosen for the week.\n\n
+        9.       The grocery list will combine like ingredients and display them in a total amount that
+        is equal to the minimum required amount to make all recipes chosen for the week.\n\n
+        10.       To add individual items to your grocery list, click the "Add Grocery Item" button.\n\n
+        11.       To remove items added with the "Add Grocery Item" button, click the "Delete Grocery List button. This will not clear ingredients added from recipes selected from browse recipes.\n\n12.  In order to completely clear the grocery list, there can be no recipes added to "My Week".\n\n\n\n\n\n
+
 
     </string>
     <string name="push_to_users">Push to Users</string>
@@ -148,10 +152,14 @@
         selected the tag you want to search for, click “Search”. The app will then display all recipes with tags that match what you selected.\n\n
         21.      To see what ingredients have been added to your shopping list for the week, click the “Grocery List” button.\n\n
         22.       The grocery list will combine like ingredients and display them in a total amount that
-        is equal to the minimum required amount to make all recipes chosen for the week.\n\n\n\n\n\n\n
+        is equal to the minimum required amount to make all recipes chosen for the week.\n\n
+        23.       To add individual items to your grocery list, click the "Add Grocery Item" button.\n\n
+        24.       To remove items added with the "Add Grocery Item" button, click the "Delete Grocery List button. This will not clear ingredients added from recipes selected from browse recipes.\n\n25.  In order to completely clear the grocery list, there can be no recipes added to "My Week".\n\n\n\n\n\n
 
     </string>
     <string name="todo">TODO</string>
+    <string name="add_grocery_item">Add Grocery Item</string>
+    <string name="delete_grocery_list">Delete Grocery List</string>
 
 
 </resources>

@@ -49,6 +49,7 @@
             android:name=".FaqAdminPage"
             android:label="@string/title_activity_faq_admin_page"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".addGroceryItemPage"></activity>
     </application>
 
 </manifest>

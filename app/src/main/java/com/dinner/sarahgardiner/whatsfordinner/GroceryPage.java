@@ -156,7 +156,7 @@ public class GroceryPage extends AppCompatActivity {
                 GroceryListObj.add((Ingredient) r.getIngredientsOneAtATime(k));
             }
         }
-
+        GroceryListObj.addAll(addGroceryItemPage.AddedGroceries);
         combine();
         sort();
         condense();
