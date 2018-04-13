@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class GroceryPage extends AppCompatActivity {
 
-    private static  ArrayList<Ingredient> GroceryListObj = new ArrayList<Ingredient>();
+    private static ArrayList<Ingredient> GroceryListObj = new ArrayList<Ingredient>();
     private static ArrayList<Ingredient> GL = new ArrayList<Ingredient>();
     private static ArrayList<Ingredient> Produce = new ArrayList<Ingredient>();
     private static ArrayList<Ingredient> Dairy = new ArrayList<Ingredient>();
