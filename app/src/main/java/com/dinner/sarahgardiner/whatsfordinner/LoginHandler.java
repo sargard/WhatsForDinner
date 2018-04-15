@@ -19,7 +19,6 @@ public class LoginHandler {
             URL url = new URL(inputURL);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
-
             InputStream in = new BufferedInputStream(conn.getInputStream());
             response = convertToString(in);
         }
@@ -32,9 +31,9 @@ public class LoginHandler {
         catch (IOException error) {
             Log.e(TAG, "IOException: " + error.getMessage());
         }
-        catch (Exception error) {
-            Log.e(TAG, "Exception: " + error.getMessage());
-        }
+        /*catch (Exception error) {
+            Log.e(TAG, "1Exception: " + error.getMessage());
+        }*/
         return response;
     }
     private String convertToString(InputStream in){

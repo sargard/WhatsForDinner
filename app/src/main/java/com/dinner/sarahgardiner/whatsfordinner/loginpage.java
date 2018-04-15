@@ -15,13 +15,16 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
+import java.util.Base64;
 
 public class loginpage extends AppCompatActivity {
 
-    private static final String TAG = LoginHandler.class.getSimpleName();
+    private static final String TAG = loginpage.class.getSimpleName();
     public static String uname;
     boolean goodUserLogin = false;
     boolean goodAdminLogin = false;
@@ -45,11 +48,8 @@ public class loginpage extends AppCompatActivity {
         new LoginExecute().execute();
     }
     public void onUserClick(View view) {
-        Log.d(TAG,"\n\n\n\n\n"+"          1            "+"\n\n\n\n\n");
         userClick = true;
         new LoginExecute().execute();
-        Log.d(TAG,"\n\n\n\n\n"+"          2            "+"\n\n\n\n\n");
-        Log.d(TAG,"\n\n\n\n\n"+"          5            "+"\n\n\n\n\n");
     }
 
     private class LoginExecute extends AsyncTask<Void, Void, Void>{
@@ -82,7 +82,6 @@ public class loginpage extends AppCompatActivity {
             {
                 try {
                     JSONObject ob = new JSONObject(jsonString);
-                    Log.d(TAG,"\n\n\n\n\n"+ob.get("status")+"\n\n\n\n\n");
                     if(userClick && ob.get("status").equals("user login pass") && ob.get("admin").equals("no"))
                     {
                         Log.d(TAG,"\n\n\n\n\n"+"Inside"+"\n\n\n\n\n");
@@ -114,14 +113,13 @@ public class loginpage extends AppCompatActivity {
             if(goodUserLogin)
             {
                 goodUserLogin = false;
-                Log.d(TAG,"\n\n\n\n\n"+"          3            "+"\n\n\n\n\n");
                 Intent intent2 = new Intent(loginpage.this, UserMenu.class);
                 startActivity(intent2);
-                Log.d(TAG,"\n\n\n\n\n"+"          4            "+"\n\n\n\n\n");
             }
             else if(goodAdminLogin)
             {
                 goodAdminLogin = false;
+                new RecipeLoadExecute().execute();
                 Intent intent3 = new Intent(loginpage.this, adminMenu.class);
                 startActivity(intent3);
             }
@@ -131,7 +129,76 @@ public class loginpage extends AppCompatActivity {
             }
         }
     }
+    private class RecipeLoadExecute extends AsyncTask<Void, Void, Void>{
+
+        boolean goodDownload = false;
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pDialog = new ProgressDialog(loginpage.this);
+            pDialog.setMessage("Downloading Admin Recipes...");
+            pDialog.setCancelable(false);
+            pDialog.show();
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            LoginHandler lh = new LoginHandler();
+            String jsonString = null;
+            jsonString = lh.makeServiceCall("https://cpsc-350-psethr.c9users.io:8082/get-all-recipes");
+            Log.d(TAG,"\n\n\n\n\n"+jsonString+"\n\n\n\n\n");
+
+            if(jsonString != null)
+            {
+                Log.d(TAG,"               1                     ");
+                try {
+                    JSONObject ob = new JSONObject(jsonString);
+                    if(!ob.get("adminrecipes").equals(""))
+                    {
+                        Log.d(TAG,"               2                     ");
+                        goodDownload = true;
+                        try {
+                            Log.d(TAG,"               "+ob.get("adminrecipes").toString()+"                     ");
+                            Log.d(TAG,"               "+ob.get("adminrecipes").toString().getBytes()+"                     ");
+                            ByteArrayInputStream bis = new ByteArrayInputStream(Base64.getDecoder().decode(ob.get("adminrecipes").toString().getBytes()));
+                            ObjectInputStream oInputStream = new ObjectInputStream(bis);
+                            CreateRecipePage.RecipeList = (ArrayList<Recipe>) oInputStream.readObject();
+                            Log.d(TAG,"               "+CreateRecipePage.RecipeList.size()+"                     ");
+                            for(Recipe ele: CreateRecipePage.RecipeList)
+                            {
+                                Log.d(TAG, "Recipe Name: "+ele.getName());
+                                Log.d(TAG, "Recipe Name: "+ele.getServings());
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        } catch (ClassNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    Log.d(TAG,"               3                     ");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+            Log.d(TAG,"               4                     ");
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            goodDownload = false;
+            if(pDialog.isShowing())
+            {
+                pDialog.dismiss();
+            }
+        }
+    }
 }
+
+
+
 //      /data/data/com.example.sarahgardiner.whatsfordinner
 
 //      /data/data/com.example.sarahgardiner.whatsfordinner/files/Recipes.ser

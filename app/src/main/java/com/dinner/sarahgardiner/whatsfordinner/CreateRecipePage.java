@@ -1,8 +1,10 @@
 package com.dinner.sarahgardiner.whatsfordinner;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,15 +13,24 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Base64;
 
 public class CreateRecipePage extends AppCompatActivity {
 
+    private static final String TAG = CreateRecipePage.class.getSimpleName();
     public static ArrayList<Recipe> RecipeList = new ArrayList<Recipe>();
-
+    String jsonString;
+    String serialized_input;
+    ProgressDialog pDialog;
+    boolean goodRecipeAdminSent = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,21 +84,7 @@ public class CreateRecipePage extends AppCompatActivity {
         //-------------save recipe list to phone -----------------------
         String fn = "RecipesAdmin.ser";
 
-        try {
-            FileOutputStream f = this.openFileOutput(fn, Context.MODE_PRIVATE);
-            ObjectOutputStream o = new ObjectOutputStream (f);
-            o.writeObject (RecipeList);
-            o.close ();
-            Log.d("myTag", "File writing: "+ true);
-        }
-        catch ( Exception ex ) {
-            Log.d("myTag", "File writing: "+ false);
-            ex.printStackTrace ();
-        }
-        /*
-        String fn = "RecipesAdmin.ser";
-
-        try {
+        /*try {
             FileOutputStream f = this.openFileOutput(fn, Context.MODE_PRIVATE);
             ObjectOutputStream o = new ObjectOutputStream (f);
             o.writeObject (RecipeList);
@@ -98,15 +95,79 @@ public class CreateRecipePage extends AppCompatActivity {
             Log.d("myTag", "File writing: "+ false);
             ex.printStackTrace ();
         }*/
+        LoginHandler lh = new LoginHandler();
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ObjectOutputStream os = new ObjectOutputStream(bos);
+        os.writeObject(RecipeList);
+        serialized_input = Base64.getEncoder().encodeToString(bos.toByteArray()); //bos.toString();
+        os.close();
 
-        String msg = "Recipe Added";
-        Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
-        toast.show();
-        finish();
+        new CreateRecipeExecute().execute();
+
     }
 
     public void onIngredientClick(View view) {
         Intent intent = new Intent(this, AddIngredientPage.class);
         startActivity(intent);
     }
+
+
+    private class CreateRecipeExecute extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pDialog = new ProgressDialog(CreateRecipePage.this);
+            pDialog.setMessage("Uploading Recipe...");
+            pDialog.setCancelable(false);
+            pDialog.show();
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            LoginHandler lh = new LoginHandler();
+            jsonString = lh.makeServiceCall("https://cpsc-350-psethr.c9users.io:8082/add-recipe-admin?object="+serialized_input);
+            Log.d(TAG,"\n\n\n\n\n"+jsonString+"\n\n\n\n\n");
+
+            if(jsonString != null)
+            {
+                try {
+                    JSONObject ob = new JSONObject(jsonString);
+                    if(ob.get("status").equals("updated admin recipes"))
+                    {
+                        Log.d(TAG,"\n\n\n\n\n"+"Inside"+"\n\n\n\n\n");
+                        goodRecipeAdminSent = true;
+                        Log.d(TAG,"\n\n\n\n\n"+"goodUserLogin"+goodRecipeAdminSent+"\n\n\n\n\n");
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+
+            if(pDialog.isShowing())
+            {
+                pDialog.dismiss();
+            }
+            if(goodRecipeAdminSent)
+            {
+                goodRecipeAdminSent = false;
+                Log.d(TAG,"\n\n\n\n\n"+"          3            "+"\n\n\n\n\n");
+                Toast.makeText(CreateRecipePage.this, "Recipe Uploaded", Toast.LENGTH_SHORT).show();
+                Log.d(TAG,"\n\n\n\n\n"+"          4            "+"\n\n\n\n\n");
+                finish();
+            }
+            else
+            {
+                Toast.makeText(CreateRecipePage.this, "Error: Recipe Wasn't Uploaded", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
 }
+
